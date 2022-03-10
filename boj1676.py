@@ -1,9 +1,13 @@
+import math
 n=int(input())
-fac=int(1)
-zero_count=int(0)
-for i in range(n):
-    fac=fac*(i+1)
-while(fac%10==0):
-    zero_count+=1
-    fac/=10
-print(zero_count)
+fac=math.factorial(n)
+cnt=0
+l1=list(str(fac))
+l=len(l1)-1
+while True:
+    if l1[l]=='0':
+        cnt+=1
+        l-=1
+    else:
+        break;
+print(cnt)
