@@ -1,15 +1,15 @@
 import sys
-people=[]
-double_people=[]
+lis_people=set()
+ab_people=set()
 n,m=map(int, sys.stdin.readline().split())
-cnt=int(0)
-for i in range(n+m):
-    new_input=input()
-    people.append(new_input)
-    if people.count(new_input)==2:
-        double_people.append(new_input)
-        cnt+=1
-double_people.sort()
-print(cnt)
+
+for i in range(n):
+    lis_people.add(input())
+    
+for i in range(m):
+    ab_people.add(input())
+
+double_people=sorted(list(lis_people&ab_people))
+print(len(double_people))
 for i in double_people:
     print(i)
