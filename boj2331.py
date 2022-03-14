@@ -7,14 +7,10 @@ while(True):
     x=int(0)
     for i in num_list:
         x+=int(i)**p
-        if d.count(i)>1:
-            overlap=d.index(i)
-            gap=d.index(j,overlap+1)-overlap
-            break;
-        else:
-            d.append(x)
-            print(d)
-            
-length=len(x)
-del x[length-gap:]
-print(length)  
+    d.append(x)
+    if d.count(x)>=2:
+        overlap=d.index(x)
+        gap=d.index(x,overlap+1)-overlap
+        break;
+length=len(d)
+print(length-gap-1)
