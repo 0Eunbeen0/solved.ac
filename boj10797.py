@@ -1,3 +1,4 @@
+#10부제 차량문제
 a=input()
 cars=list(map(str,input().split()))
 cnt=int(0)
